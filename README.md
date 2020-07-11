@@ -36,3 +36,10 @@ https://bradfrost.com/blog/post/atomic-web-design/ <br/><br/>
 `Pages` beinhaltet die designs der einzelnen Seiten.
 
 `theme.js` enthält das Theme, sprich Farbschemen und widerverwertbare Elemente. Benutze so oft es geht das Theme! So kann man die App schnell anpassen.
+
+### Config
+
+In der `config.js` steht die aktuelle Konfiguration des Projekts.
+`const config` gibt an, welche config genutzt wird.
+Das KonfigurationsObject beschreibt die Rätsel und Kapitel.
+Der `unlocked`parameter gibt an, welche Kapitel schon freigeschaltet sind. Wenn man zB nächste Woche das nächste Rätsel freigibt, wird dieser um 1 erhöht.

@@ -8,14 +8,8 @@ import { Story } from "../molecules/Story";
 import { theme } from "../../theme";
 import { DasBrauchtIhrIcons } from "../molecules/DasBrauchtIhrIcons";
 import { TableOfContents } from "../molecules/TableOfContents";
-
-const content = [
-  { label: "Kapitel 1", to: "kapitel1", solved: true },
-  { label: "Kapitel 2", to: "kapitel2" },
-  { label: "Kapitel 3", to: "kapitel3" },
-  { label: "Kapitel 4", to: "kapitel4" },
-  { label: "Kapitel 5", to: "kapitel5" },
-];
+import { ConfiguredTableOfContents } from "../organisms/ConfiguredTableOfContents";
+import { unlocked } from "../../config";
 
 export const Home = () => {
   return (
@@ -29,8 +23,8 @@ export const Home = () => {
         seinen Inhalt ändern kann…
       </Story>
       <Divider />
-      {/* <TableOfContents content={content} />
-      <Divider /> */}
+      <ConfiguredTableOfContents unlocked={unlocked} />
+      <Divider />
       <H3>Allgemeine Infos</H3>
       <p style={{ marginBottom: "3rem" }}>
         Bei Rückfragen könnt ihr eine Email an{" "}

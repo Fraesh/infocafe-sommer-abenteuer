@@ -12,6 +12,7 @@ export const Kapitel1 = () => {
       <Map src="https://i.ebayimg.com/images/g/NWAAAOSw7NZbrVa~/s-l1600.jpg" />
       <Riddle
         index={1}
+        chapter={1}
         heading="Ein Otto auf Reisen"
         question="Was geht walla?"
         answer="Deine Mudda"
@@ -29,8 +30,8 @@ export const Kapitel1 = () => {
         ein gutes Brot Käsebrot ist ein gutes Brot Super sexy Käsebrot.
       </Riddle>
       <Riddle
-        open
         index={2}
+        chapter={1}
         heading="Wer hat das Käsebrot geklaut?"
         question="Was geht walla?"
         answer="Deine Mudda"
@@ -49,6 +50,7 @@ export const Kapitel1 = () => {
       </Riddle>
       <Riddle
         index={3}
+        chapter={1}
         heading="Brudi gibt Gas"
         question="Was geht walla?"
         answer="Deine Mudda"
@@ -67,6 +69,7 @@ export const Kapitel1 = () => {
       </Riddle>
       <Riddle
         index={4}
+        chapter={1}
         heading="Shits gettin real"
         question="Was geht walla?"
         answer="Deine Mudda"
@@ -85,6 +88,7 @@ export const Kapitel1 = () => {
       </Riddle>
       <Riddle
         index={5}
+        chapter={1}
         heading="Und nun?"
         question="Was geht walla?"
         answer="Deine Mudda"

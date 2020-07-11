@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { isMobile } from "../../helper/isMobile";
 import { H4 } from "../atoms/H4";
 import { Link } from "react-router-dom";
+import { StoreContext } from "../../helper/store";
 const Container = styled.div`
   width: 100%;
   display: flex;
@@ -16,6 +17,7 @@ const Row = styled(Link)`
   color: inherit;
   text-decoration: none;
   ${(p) => (p.solved ? " text-decoration:line-through; opacity:.5;" : "")}
+  ${(p) => (p.disabled ? "opacity:.5;" : "")}
 `;
 
 const Line = styled.div`
@@ -30,7 +32,11 @@ export const TableOfContents = ({ content }) => {
       <H4>Kapitel</H4>
       {content.map((c) => {
         return (
-          <Row solved={c.solved} to={c.to}>
+          <Row
+            solved={c.solved}
+            disabled={c.disabled}
+            to={c.disabled ? "" : c.to}
+          >
             {c.label}
             <Line />
             {c.solved ? "Gelöst" : "Offen"}

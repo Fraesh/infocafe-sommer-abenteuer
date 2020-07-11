@@ -12,12 +12,12 @@ const Container = styled.div`
   margin-bottom: 3rem;
 `;
 export const TextQuestion = ({ question, answer, onSolve }) => {
-  const [state, setState] = React.useState("");
   const [answered, setAnswered] = React.useState(false);
 
   const checkValue = (v) => {
     if (v === answer) {
       setAnswered(true);
+      onSolve();
     }
   };
   return (
