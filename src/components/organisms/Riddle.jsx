@@ -13,6 +13,7 @@ const open = {
 const closed = {
   height: 0,
   opacity: 0,
+  overflow: "hidden",
 };
 
 export const Riddle = ({

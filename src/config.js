@@ -6,7 +6,7 @@
 const sa2020 = { name: "sa2020", chapters: [5, 4, 6, 7, 5] };
 
 // Freigeschaltete Kapitel
-export const unlocked = 3;
+export const unlocked = 1;
 // Aktuelle Config
 export const config = sa2020;
 
