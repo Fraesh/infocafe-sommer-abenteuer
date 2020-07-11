@@ -1,68 +1,38 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Infocafe Sommer Abenteuer Framework
 
-## Available Scripts
+#### Einführung
 
-In the project directory, you can run:
+Mit diesem React Framework lässt sich einfach eine Rätselabenteuer Website gestalten.
+Clone das Projekt (am besten in VSCode) und führe
 
-### `npm start`
+### `npm i`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+aus um alle benütigten Pakete zu installieren.
+Danach kannsst du mit
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### `npm run start`
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Die App auf dem lokalen DevServer starten.
+Zum compilen und releasen der App, starte
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Die fertige App landet gebundlet im `build` folder.<br />
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+#### Struktur
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Im root haben wir 2 Ordner<br/>
 
-### `npm run eject`
+- public
+- src
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Im `public` folder befinden sich Dateien, die ausserhalb unserer React App existieren wie zB Bilder, die index.html, etc. Diese werden beim build einfach in den build folder kopiert.<br/> <br/>
+Im `src` folder spielt sich der JS Teil unserer App und somit alles. Dort findest du Ordner im `Atomic Design` Konzept strukturiert.
+<br/>
+https://bradfrost.com/blog/post/atomic-web-design/ <br/><br/>
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+`App.js` ist unsere Basis, von der alles ausgeht. Dort findest du den Router und kannst Unterseiten steuern.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+`Pages` beinhaltet die designs der einzelnen Seiten.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+`theme.js` enthält das Theme, sprich Farbschemen und widerverwertbare Elemente. Benutze so oft es geht das Theme! So kann man die App schnell anpassen.
