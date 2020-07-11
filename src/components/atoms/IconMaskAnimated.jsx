@@ -32,6 +32,7 @@ export const IconMaskAnimated = () => {
         }}
       />
       <img
+        alt="Mundschutz"
         style={{
           objectFit: "contain",
           width: "100%",

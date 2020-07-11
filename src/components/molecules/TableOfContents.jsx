@@ -1,9 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { isMobile } from "../../helper/isMobile";
 import { H4 } from "../atoms/H4";
 import { Link } from "react-router-dom";
-import { StoreContext } from "../../helper/store";
+
 const Container = styled.div`
   width: 100%;
   display: flex;

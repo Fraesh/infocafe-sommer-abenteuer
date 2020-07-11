@@ -7,7 +7,6 @@ import { Divider } from "../atoms/Divider";
 import { Story } from "../molecules/Story";
 import { theme } from "../../theme";
 import { DasBrauchtIhrIcons } from "../molecules/DasBrauchtIhrIcons";
-import { TableOfContents } from "../molecules/TableOfContents";
 import { ConfiguredTableOfContents } from "../organisms/ConfiguredTableOfContents";
 import { unlocked } from "../../config";
 

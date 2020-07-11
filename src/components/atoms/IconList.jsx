@@ -28,7 +28,11 @@ export const IconList = ({ icons }) => {
       {icons.map((i) => {
         return (
           <Icon>
-            {typeof i.src === "string" ? <img src={i.src} /> : i.src}
+            {typeof i.src === "string" ? (
+              <img alt={i.label} src={i.src} />
+            ) : (
+              i.src
+            )}
             <span>{i.label}</span>
           </Icon>
         );

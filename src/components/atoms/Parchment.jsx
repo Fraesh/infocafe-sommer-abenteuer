@@ -21,7 +21,6 @@ const ParchmentComponent = styled(motion.div)`
     inset 0px 0px 7vw 2vw rgba(50, 10, 10, 0.6);
 `;
 
-const transition = { duration: 0.4, ease: "easeInOut" };
 export const Parchment = ({ children }) => {
   return (
     <ParchmentComponent

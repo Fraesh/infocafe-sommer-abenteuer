@@ -3,7 +3,7 @@ import { TextQuestion } from "../molecules/TextQuestion";
 import { RiddleHeading } from "../atoms/RiddleHeading";
 import { Divider } from "../atoms/Divider";
 import { Story } from "../molecules/Story";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { StoreContext } from "../../helper/store";
 const open = {
   height: "auto",
