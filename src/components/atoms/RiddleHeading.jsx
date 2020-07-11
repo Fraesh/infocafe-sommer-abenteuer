@@ -1,6 +1,6 @@
 import React from "react";
 
-export const RiddleHeading = ({ index, children }) => {
+export const RiddleHeading = ({ index, children, solved, onClick }) => {
   return (
     <div
       style={{
@@ -11,6 +11,7 @@ export const RiddleHeading = ({ index, children }) => {
         marginBottom: "2rem",
         width: "100%",
       }}
+      onClick={onClick}
     >
       <div
         style={{
@@ -42,7 +43,7 @@ export const RiddleHeading = ({ index, children }) => {
           }}
         />
       </div>
-      <div>- Rätsel {index} -</div>
+      <div>- {solved ? "GELÖST" : `Rätsel ${index}`} -</div>
     </div>
   );
 };

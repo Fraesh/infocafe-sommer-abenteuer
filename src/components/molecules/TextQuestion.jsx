@@ -11,8 +11,16 @@ const Container = styled.div`
   width: 100%;
   margin-bottom: 3rem;
 `;
-export const TextQuestion = ({ question, answer, onSolve }) => {
+export const TextQuestion = ({ question, answer, solved, onSolve }) => {
   const [answered, setAnswered] = React.useState(false);
+  const [state, setState] = React.useState("");
+
+  React.useState(() => {
+    if (solved) {
+      setState(answer);
+      setAnswered(true);
+    }
+  }, [solved]);
 
   const checkValue = (v) => {
     if (v === answer) {
@@ -20,13 +28,18 @@ export const TextQuestion = ({ question, answer, onSolve }) => {
       onSolve();
     }
   };
+
   return (
     <Container>
       <H3 style={{ marginBottom: "2rem" }}>{question}</H3>
       <TextField
         style={{ color: !answered ? theme.primary : theme.green }}
         disabled={answered}
-        onChange={(e) => checkValue(e.target.value)}
+        value={state}
+        onChange={(e) => {
+          setState(e.target.value);
+          checkValue(e.target.value);
+        }}
       />
     </Container>
   );

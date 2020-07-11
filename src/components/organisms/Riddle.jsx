@@ -5,12 +5,12 @@ import { Divider } from "../atoms/Divider";
 import { Story } from "../molecules/Story";
 import { motion } from "framer-motion";
 import { StoreContext } from "../../helper/store";
-const open = {
+const openPose = {
   height: "auto",
   opacity: 1,
 };
 
-const closed = {
+const closedPose = {
   height: 0,
   opacity: 0,
   overflow: "hidden",
@@ -26,7 +26,9 @@ export const Riddle = ({
   type,
 }) => {
   const { getRiddleState, solveRiddle } = React.useContext(StoreContext);
+  const [openState, setOpen] = React.useState(false);
   const state = getRiddleState(chapter, index);
+  const open = state === "ACTIVE" || openState;
   return (
     <>
       <motion.div
@@ -35,13 +37,24 @@ export const Riddle = ({
           flexDirection: "column",
           alignItems: "center",
         }}
-        initial={closed}
-        animate={state !== "ACTIVE" ? closed : open}
+        initial={closedPose}
+        animate={open ? openPose : closedPose}
       >
-        <RiddleHeading index={index}>{heading}</RiddleHeading>
+        <RiddleHeading
+          index={index}
+          solved={state === "SOLVED"}
+          onClick={() => {
+            if (state === "SOLVED") {
+              setOpen(false);
+            }
+          }}
+        >
+          {heading}
+        </RiddleHeading>
         <Story>{children}</Story>
         <Divider />
         <TextQuestion
+          solved={state === "SOLVED"}
           question={question}
           answer={answer}
           onSolve={() => {
@@ -57,7 +70,12 @@ export const Riddle = ({
           alignItems: "flex-end",
           width: "100%",
         }}
-        animate={state === "ACTIVE" ? closed : open}
+        onClick={() => {
+          if (state === "SOLVED") {
+            setOpen(true);
+          }
+        }}
+        animate={open ? closedPose : openPose}
       >
         <div
           style={{
