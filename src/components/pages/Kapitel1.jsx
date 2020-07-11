@@ -9,7 +9,7 @@ export const Kapitel1 = () => {
     <Parchment>
       <H1>Kapitel 1</H1>
 
-      <Map src="https://i.ebayimg.com/images/g/NWAAAOSw7NZbrVa~/s-l1600.jpg" />
+      <Map src="img/map.jpg" />
       <Riddle
         index={1}
         chapter={1}

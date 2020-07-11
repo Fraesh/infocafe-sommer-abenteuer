@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { isMobile } from "../../helper/isMobile";
+import { theme } from "../../theme";
 
 const Container = styled.div`
   position: relative;
@@ -11,8 +12,8 @@ const Container = styled.div`
     font-family: Aclonica;
     float: left;
     font-weight: bold;
-    color: #460202;
-    text-shadow: 0px 0px 15px rgba(150, 0, 0, 0.6);
+    color: ${theme.primary};
+    text-shadow: ${theme.textShadow};
     padding-right: 0.125em;
   }
 `;
