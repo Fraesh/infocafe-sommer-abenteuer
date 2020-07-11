@@ -5,7 +5,7 @@ export const Footer = () => {
     <>
       <a
         href="https://infocafe.org/kontakt/impressum/"
-        style={{ margin: "3rem", color: "white", opacity: 0.5 }}
+        style={{ marginTop: "3rem", color: "white", opacity: 0.5 }}
       >
         Impressum
       </a>
