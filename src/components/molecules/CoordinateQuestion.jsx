@@ -3,6 +3,7 @@ import { H3 } from "../atoms/H3";
 import { TextField } from "../atoms/TextField";
 import styled from "styled-components";
 import { theme } from "../../theme";
+import { CoordinateField } from "../atoms/CoordinateField";
 
 const Container = styled.div`
   display: flex;
@@ -11,19 +12,21 @@ const Container = styled.div`
   width: 100%;
   margin-bottom: 3rem;
 `;
-export const TextQuestion = ({ question, answer, solved, onSolve }) => {
+export const CoordinateQuestion = ({ question, answer, solved, onSolve }) => {
   const [answered, setAnswered] = React.useState(false);
-  const [state, setState] = React.useState("");
 
   React.useState(() => {
     if (solved) {
-      setState(answer);
       setAnswered(true);
     }
   }, [solved]);
 
   const checkValue = (v) => {
-    if (v.toUpperCase() === answer.toUpperCase()) {
+    if (
+      !v.some((v, i) => {
+        return v !== answer[i];
+      })
+    ) {
       setAnswered(true);
       onSolve();
     }
@@ -32,13 +35,13 @@ export const TextQuestion = ({ question, answer, solved, onSolve }) => {
   return (
     <Container>
       <H3 style={{ marginBottom: "2rem" }}>{question}</H3>
-      <TextField
+      <CoordinateField
         style={{ color: !answered ? theme.primary : theme.green }}
         disabled={answered}
-        value={state}
+        coordinate={answer}
+        answered={answered}
         onChange={(e) => {
-          setState(e.target.value);
-          checkValue(e.target.value);
+          checkValue(e);
         }}
       />
     </Container>

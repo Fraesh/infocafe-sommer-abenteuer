@@ -10,19 +10,19 @@ import { DasBrauchtIhrIcons } from "../molecules/DasBrauchtIhrIcons";
 import { ConfiguredTableOfContents } from "../organisms/ConfiguredTableOfContents";
 import { unlocked } from "../../config";
 
-export const Home = () => {
+export const HomeDev = () => {
   return (
     <Parchment>
       <Logo />
       <Story>
-        Wenn du diese Nachricht liest hast du bewiesen, dass du uns helfen
-        kannst. Irgendetwas stimmt nicht im Land und nur du kannst uns helfen!
-        Wir werden am 13.7. den ersten Hinweis geben können damit du
-        herausfinden kannst was passiert ist. Das hier ist übrigens ein
-        magischer Brief der seinen Inhalt ändern kann…
+        Wenn du diese Nachricht liest hast du bewiesen das du uns helfen kannst.
+        Irgendetwas stimmt nicht im Land und nur du kannst uns helfen! Wir
+        werden am 13.7. den ersten Hinweis geben können damit du herausfinden
+        kannst was passiert ist. Das hier ist übrigens ein magischer Brief der
+        seinen Inhalt ändern kann…
       </Story>
-      {/* <Divider /> */}
-      {/* <ConfiguredTableOfContents unlocked={unlocked} /> */}
+      <Divider />
+      <ConfiguredTableOfContents unlocked={unlocked} />
       <Divider />
       <H3>Allgemeine Infos</H3>
       <p style={{ marginBottom: "3rem" }}>

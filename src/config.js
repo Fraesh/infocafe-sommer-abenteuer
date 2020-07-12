@@ -3,7 +3,7 @@
 // Jeder Eintrag im Array ist 1 Kapitel mit x Rätseln.
 // bsp: Kapitel 1 - 5 Rätsel
 //      Kapitel 2 - 4 Rätsel ...
-const sa2020 = { name: "sa2020", chapters: [5, 4, 6, 7, 5] };
+const sa2020 = { name: "sa2020", chapters: [4, 4, 6, 7, 5] };
 
 // Freigeschaltete Kapitel
 export const unlocked = 1;

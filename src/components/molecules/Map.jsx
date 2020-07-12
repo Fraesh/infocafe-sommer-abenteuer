@@ -7,6 +7,8 @@ const Container = styled.div`
   flex: auto;
   overflow: hidden;
   position: relative;
+  height: 600px;
+  height: min(70vw, 600px);
   min-height: min(70vw, 600px);
   width: calc(100% + 6rem);
   border: 0.5rem solid ${theme.secondary};

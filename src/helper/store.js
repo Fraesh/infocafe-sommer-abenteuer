@@ -9,6 +9,7 @@ import { generateDefaultState, config } from "../config";
 // solveRiddle(chapter, riddle) - Löst ein Rätsle und speichert es local ab.
 // getRiddleState(chapter, riddle) - Liefert "SOLVED", "ACTIVE" oder "DISABLED"
 // getChapterState(chapter) - Liefert "SOLVED", "ACTIVE" oder "DISABLED"
+// solveChapter(chapter) - Löst ein komplettes kapitel
 
 export const StoreContext = React.createContext({});
 
@@ -67,6 +68,24 @@ export const StoreProvider = (props) => {
     });
   };
 
+  // Solve a chapter!
+  const solveChapter = (chapter) => {
+    // Nothing to do here...
+
+    let data = {};
+    const riddleCount = config.chapters[chapter - 1];
+    for (let i = 1; i <= riddleCount; i++) {
+      data[i] = true;
+    }
+    setValue({
+      ...storedValue,
+      progress: {
+        ...storedValue.progress,
+        [chapter]: data,
+      },
+    });
+  };
+
   const getRiddleState = (chapter, riddle) => {
     const isSolved = storedValue.progress[chapter]
       ? Boolean(storedValue.progress[chapter][riddle])
@@ -120,6 +139,7 @@ export const StoreProvider = (props) => {
     solveRiddle,
     getRiddleState,
     getChapterState,
+    solveChapter,
   };
 
   return <StoreContext.Provider value={v}>{children}</StoreContext.Provider>;

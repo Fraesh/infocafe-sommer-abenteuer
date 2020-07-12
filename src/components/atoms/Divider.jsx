@@ -5,7 +5,7 @@ export const Divider = styled.div`
   background-image: url("/img/divider.svg");
   background-size: contain;
   height: 2rem;
-  margin: 3rem;
+  margin: 3rem 0;
   width: 100%;
   background-position: center center;
   background-repeat: no-repeat no-repeat;

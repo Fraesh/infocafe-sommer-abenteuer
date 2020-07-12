@@ -5,6 +5,7 @@ import { Divider } from "../atoms/Divider";
 import { Story } from "../molecules/Story";
 import { motion } from "framer-motion";
 import { StoreContext } from "../../helper/store";
+import { CoordinateQuestion } from "../molecules/CoordinateQuestion";
 const openPose = {
   height: "auto",
   opacity: 1,
@@ -22,8 +23,9 @@ export const Riddle = ({
   heading,
   children,
   question,
+  coordinate,
   answer,
-  type,
+  prolog,
 }) => {
   const { getRiddleState, solveRiddle } = React.useContext(StoreContext);
   const [openState, setOpen] = React.useState(false);
@@ -40,27 +42,44 @@ export const Riddle = ({
         initial={closedPose}
         animate={open ? openPose : closedPose}
       >
-        <RiddleHeading
-          index={index}
-          solved={state === "SOLVED"}
-          onClick={() => {
-            if (state === "SOLVED") {
-              setOpen(false);
-            }
-          }}
-        >
-          {heading}
-        </RiddleHeading>
+        {!prolog && (
+          <RiddleHeading
+            index={index}
+            solved={state === "SOLVED"}
+            onClick={() => {
+              if (state === "SOLVED") {
+                setOpen(false);
+              }
+            }}
+          >
+            {heading}
+          </RiddleHeading>
+        )}
         <Story>{children}</Story>
-        <Divider />
-        <TextQuestion
-          solved={state === "SOLVED"}
-          question={question}
-          answer={answer}
-          onSolve={() => {
-            solveRiddle(chapter, index);
-          }}
-        />
+        {answer && (
+          <>
+            <Divider />
+            {coordinate ? (
+              <CoordinateQuestion
+                solved={state === "SOLVED"}
+                question={question}
+                answer={answer}
+                onSolve={() => {
+                  solveRiddle(chapter, index);
+                }}
+              />
+            ) : (
+              <TextQuestion
+                solved={state === "SOLVED"}
+                question={question}
+                answer={answer}
+                onSolve={() => {
+                  solveRiddle(chapter, index);
+                }}
+              />
+            )}
+          </>
+        )}
       </motion.div>
 
       <motion.div
@@ -86,9 +105,11 @@ export const Riddle = ({
             textDecoration: state === "SOLVED" ? "line-through" : "none",
           }}
         >
-          {state === "DISABLED" ? "????" : heading}
+          {state === "DISABLED" ? "????" : prolog ? "Prolog" : heading}
         </div>
-        <div style={{ fontSize: ".8rem", opacity: 0.4 }}>Rätsel {index}</div>
+        <div style={{ fontSize: ".8rem", opacity: 0.4 }}>
+          {!prolog && `Rätsel ${index}`}
+        </div>
       </motion.div>
     </>
   );

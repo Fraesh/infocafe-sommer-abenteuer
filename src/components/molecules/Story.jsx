@@ -6,6 +6,7 @@ import { theme } from "../../theme";
 const Container = styled.div`
   position: relative;
   padding: ${isMobile() ? 1.5 : 3}rem;
+  line-height: 1.5rem;
   &:first-letter {
     font-size: 3rem;
     line-height: 1;
@@ -15,6 +16,10 @@ const Container = styled.div`
     color: ${theme.primary};
     text-shadow: ${theme.textShadow};
     padding-right: 0.125em;
+  }
+
+  ul {
+    padding-left: 1rem;
   }
 `;
 
@@ -45,9 +50,9 @@ const CornerBR = styled(Corner)`
   top: calc(100% - 5.5rem);
   left: calc(100% - 5.5rem);
 `;
-export const Story = ({ children }) => {
+export const Story = ({ children, style }) => {
   return (
-    <Container>
+    <Container style={style}>
       <CornerBL />
       <CornerBR />
       <CornerTL />
