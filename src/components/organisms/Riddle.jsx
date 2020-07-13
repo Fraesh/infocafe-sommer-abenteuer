@@ -9,11 +9,17 @@ import { CoordinateQuestion } from "../molecules/CoordinateQuestion";
 const openPose = {
   height: "auto",
   opacity: 1,
+  transition: {
+    duration: 1,
+  },
 };
 
 const closedPose = {
   height: 0,
   opacity: 0,
+  transition: {
+    duration: 1,
+  },
   overflow: "hidden",
 };
 

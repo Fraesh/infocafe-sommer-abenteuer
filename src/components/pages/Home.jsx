@@ -21,8 +21,12 @@ export const Home = () => {
         herausfinden kannst was passiert ist. Das hier ist übrigens ein
         magischer Brief der seinen Inhalt ändern kann…
       </Story>
-      {/* <Divider /> */}
-      {/* <ConfiguredTableOfContents unlocked={unlocked} /> */}
+      {new Date().getDate() > 12 && (
+        <>
+          <Divider />
+          <ConfiguredTableOfContents unlocked={unlocked} />
+        </>
+      )}
       <Divider />
       <H3>Allgemeine Infos</H3>
       <p style={{ marginBottom: "3rem" }}>

@@ -140,7 +140,7 @@ export const Kapitel1 = () => {
           <li>Linke Tafel rechte Spalte; 2. Zeile von oben</li>
           <li>Linke Tafel linke Spalte; 8. Zeile von unten</li>
         </ul>
-        Eine kurze Pause, ihr denkt es ist vorbei? Doch erneut sehr ihr etwas
+        Eine kurze Pause, ihr denkt es ist vorbei? Doch erneut seht ihr etwas
         aufleuchten… was will man euch sagen?
         <br />
         <ul>
