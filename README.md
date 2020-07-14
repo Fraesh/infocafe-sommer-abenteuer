@@ -3,16 +3,16 @@
 #### Einführung
 
 Mit diesem React Framework lässt sich einfach eine Rätselabenteuer Website gestalten.
-Clone das Projekt (am besten in VSCode) und führe
+Clone das Projekt und führe
 
 ### `npm i`
 
-aus um alle benütigten Pakete zu installieren.
+aus um alle benötigten Pakete zu installieren.
 Danach kannsst du mit
 
 ### `npm run start`
 
-Die App auf dem lokalen DevServer starten.
+die App auf dem lokalen DevServer starten.
 Zum compilen und releasen der App, starte
 
 ### `npm run build`
