@@ -7,6 +7,8 @@ const Container = styled.div`
   position: relative;
   padding: ${isMobile() ? 1.5 : 3}rem;
   line-height: 1.5rem;
+  display: flex;
+  flex-direction: column;
   &:first-letter {
     font-size: 3rem;
     line-height: 1;

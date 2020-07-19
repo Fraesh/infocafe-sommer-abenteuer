@@ -3,7 +3,6 @@ import { Parchment } from "../atoms/Parchment";
 import { H1 } from "../atoms/H1";
 import { Map } from "../molecules/Map";
 import { Riddle } from "../organisms/Riddle";
-import { Story } from "../molecules/Story";
 import { Divider } from "../atoms/Divider";
 import { H4 } from "../atoms/H4";
 

@@ -32,7 +32,8 @@ export const CoordinateField = ({
     if (answered) {
       setState(coordinate);
     }
-  }, [answered]);
+  }, [answered, coordinate]);
+
   const setInputs = (i, v) => {
     if (v.length > coordinate[i].length) return;
     let newState = JSON.parse(JSON.stringify(state));

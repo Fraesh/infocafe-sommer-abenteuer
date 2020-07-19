@@ -32,6 +32,7 @@ export const Riddle = ({
   coordinate,
   answer,
   prolog,
+  epilog,
 }) => {
   const { getRiddleState, solveRiddle } = React.useContext(StoreContext);
   const [openState, setOpen] = React.useState(false);
@@ -48,7 +49,7 @@ export const Riddle = ({
         initial={closedPose}
         animate={open ? openPose : closedPose}
       >
-        {!prolog && (
+        {!prolog && !epilog && (
           <RiddleHeading
             index={index}
             solved={state === "SOLVED"}
@@ -111,10 +112,16 @@ export const Riddle = ({
             textDecoration: state === "SOLVED" ? "line-through" : "none",
           }}
         >
-          {state === "DISABLED" ? "????" : prolog ? "Prolog" : heading}
+          {state === "DISABLED"
+            ? "????"
+            : prolog
+            ? "Prolog"
+            : epilog
+            ? "Epilog"
+            : heading}
         </div>
         <div style={{ fontSize: ".8rem", opacity: 0.4 }}>
-          {!prolog && `Rätsel ${index}`}
+          {!prolog && !epilog && `Rätsel ${index}`}
         </div>
       </motion.div>
     </>

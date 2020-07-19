@@ -9,11 +9,14 @@ import { theme } from "../../theme";
 import { DasBrauchtIhrIcons } from "../molecules/DasBrauchtIhrIcons";
 import { ConfiguredTableOfContents } from "../organisms/ConfiguredTableOfContents";
 import { unlocked } from "../../config";
+import { Smaragd } from "../atoms/Smaragd";
+import { Schild } from "../atoms/Schild";
 
 export const Home = () => {
   return (
     <Parchment>
       <Logo />
+
       <Story>
         Wenn du diese Nachricht liest hast du bewiesen, dass du uns helfen
         kannst. Irgendetwas stimmt nicht im Land und nur du kannst uns helfen!
@@ -21,12 +24,10 @@ export const Home = () => {
         herausfinden kannst was passiert ist. Das hier ist übrigens ein
         magischer Brief der seinen Inhalt ändern kann…
       </Story>
-      {new Date().getDate() > 12 && (
-        <>
-          <Divider />
-          <ConfiguredTableOfContents unlocked={unlocked} />
-        </>
-      )}
+
+      <Divider />
+      <ConfiguredTableOfContents unlocked={unlocked} />
+
       <Divider />
       <H3>Allgemeine Infos</H3>
       <p style={{ marginBottom: "3rem" }}>

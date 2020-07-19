@@ -1,6 +1,5 @@
 import React from "react";
 import { H3 } from "../atoms/H3";
-import { TextField } from "../atoms/TextField";
 import styled from "styled-components";
 import { theme } from "../../theme";
 import { CoordinateField } from "../atoms/CoordinateField";

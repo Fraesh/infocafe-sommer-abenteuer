@@ -9,6 +9,8 @@ import { theme } from "../../theme";
 import { DasBrauchtIhrIcons } from "../molecules/DasBrauchtIhrIcons";
 import { ConfiguredTableOfContents } from "../organisms/ConfiguredTableOfContents";
 import { unlocked } from "../../config";
+import { Smaragd } from "../atoms/Smaragd";
+import { Schild } from "../atoms/Schild";
 
 export const HomeDev = () => {
   return (
@@ -21,8 +23,12 @@ export const HomeDev = () => {
         kannst was passiert ist. Das hier ist übrigens ein magischer Brief der
         seinen Inhalt ändern kann…
       </Story>
+      <div style={{ display: "flex" }}>
+        <Smaragd />
+        <Schild />
+      </div>
       <Divider />
-      <ConfiguredTableOfContents unlocked={unlocked} />
+      <ConfiguredTableOfContents unlocked={5} />
       <Divider />
       <H3>Allgemeine Infos</H3>
       <p style={{ marginBottom: "3rem" }}>
