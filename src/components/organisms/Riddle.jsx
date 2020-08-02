@@ -6,6 +6,7 @@ import { Story } from "../molecules/Story";
 import { motion } from "framer-motion";
 import { StoreContext } from "../../helper/store";
 import { CoordinateQuestion } from "../molecules/CoordinateQuestion";
+import { ChoiceQuestion } from "../molecules/ChoiceQuestion";
 const openPose = {
   height: "auto",
   opacity: 1,
@@ -33,6 +34,8 @@ export const Riddle = ({
   answer,
   prolog,
   epilog,
+  template,
+  choices,
 }) => {
   const { getRiddleState, solveRiddle } = React.useContext(StoreContext);
   const [openState, setOpen] = React.useState(false);
@@ -66,7 +69,7 @@ export const Riddle = ({
         {answer && (
           <>
             <Divider />
-            {coordinate ? (
+            {coordinate && (
               <CoordinateQuestion
                 solved={state === "SOLVED"}
                 question={question}
@@ -75,8 +78,23 @@ export const Riddle = ({
                   solveRiddle(chapter, index);
                 }}
               />
-            ) : (
+            )}
+
+            {!coordinate && !choices && (
               <TextQuestion
+                solved={state === "SOLVED"}
+                question={question}
+                answer={answer}
+                template={template}
+                onSolve={() => {
+                  solveRiddle(chapter, index);
+                }}
+              />
+            )}
+
+            {choices && (
+              <ChoiceQuestion
+                choices={choices}
                 solved={state === "SOLVED"}
                 question={question}
                 answer={answer}

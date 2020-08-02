@@ -1,4 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Aclonica&family=Roboto+Slab&family=Indie+Flower&display=swap");
+@font-face {
+  font-family: "Rune Slasher";
+  src: url("http://smaragd.infocafe.org/fonts/RuneSlasher.otf")
+    format("opentype");
+}
 @import-normalize;
 
 html {

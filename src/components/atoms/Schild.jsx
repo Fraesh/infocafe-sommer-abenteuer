@@ -2,7 +2,7 @@ import React from "react";
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { OutlineEffect } from "three/examples/jsm/effects/OutlineEffect.js";
-export const Schild = () => {
+export const Schild = (props) => {
   const ref = React.useRef();
 
   React.useEffect(() => {
@@ -45,5 +45,5 @@ export const Schild = () => {
     renderer.render(scene, camera);
   }, []);
 
-  return <div ref={ref}></div>;
+  return <div ref={ref} {...props}></div>;
 };

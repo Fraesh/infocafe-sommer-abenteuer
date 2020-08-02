@@ -135,11 +135,40 @@ export const StoreProvider = (props) => {
     }
   };
 
+  // SubRiddle Data. Stores an object to persist data within a riddle
+  const setSubRiddleState = (chapter, riddle, data) => {
+    const c = storedValue.subRiddle ? storedValue.subRiddle[chapter] || {} : {};
+    setValue({
+      ...storedValue,
+      subRiddle: {
+        ...(storedValue.subRiddle || {}),
+        [chapter]: {
+          ...c,
+          [riddle]: data,
+        },
+      },
+    });
+  };
+
+  const getSubRiddleState = (chapter, riddle) => {
+    if (
+      storedValue.subRiddle &&
+      storedValue.subRiddle[chapter] &&
+      storedValue.subRiddle[chapter][riddle]
+    ) {
+      return storedValue.subRiddle[chapter][riddle];
+    } else {
+      return {};
+    }
+  };
+
   const v = {
     solveRiddle,
     getRiddleState,
     getChapterState,
     solveChapter,
+    setSubRiddleState,
+    getSubRiddleState,
   };
 
   return <StoreContext.Provider value={v}>{children}</StoreContext.Provider>;

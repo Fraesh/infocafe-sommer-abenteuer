@@ -6,6 +6,7 @@ import { Riddle } from "../organisms/Riddle";
 import { Divider } from "../atoms/Divider";
 import { H4 } from "../atoms/H4";
 import { Smaragd } from "../atoms/Smaragd";
+import { SepiaImg } from "../atoms/SepiaImg";
 
 export const Kapitel2 = () => {
   return (
@@ -46,7 +47,7 @@ export const Kapitel2 = () => {
         heading="Die Heiler"
         question="Wie heißt der Laden?"
         answer="Goethe"
-        afterAnswer="Apotheke"
+        template="_ Apotheke"
       >
         Ihr tapferen Heldinnen und Helden,
         <br />
@@ -211,18 +212,13 @@ const Bilderratsel = ({ children, src, i }) => (
         gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
         alignItems: "center",
         width: "100%",
+        gridGap: "2rem",
+        justifyItems: "center",
         marginBottom: "3rem",
       }}
     >
       <div>{children}</div>
-      <img
-        src={src}
-        style={{
-          filter: "sepia(.5)",
-          boxShadow: "0px 2px 7px rgba(0,0,0,.2)",
-          maxWidth: "200px",
-        }}
-      ></img>
+      <SepiaImg src={src} />
     </div>
   </>
 );

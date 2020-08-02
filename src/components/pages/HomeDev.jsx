@@ -23,10 +23,7 @@ export const HomeDev = () => {
         kannst was passiert ist. Das hier ist übrigens ein magischer Brief der
         seinen Inhalt ändern kann…
       </Story>
-      <div style={{ display: "flex" }}>
-        <Smaragd />
-        <Schild />
-      </div>
+
       <Divider />
       <ConfiguredTableOfContents unlocked={5} />
       <Divider />
